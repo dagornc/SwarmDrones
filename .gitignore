@@ -1,0 +1,9 @@
+# Binaires de compilation Rust.
+/target
+
+# Caches Python.
+__pycache__/
+*.py[cod]
+
+# Sorties de simulation.
+*.csv
