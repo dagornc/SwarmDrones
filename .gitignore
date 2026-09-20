@@ -1,9 +1,20 @@
-# Binaires de compilation Rust.
-/target
+# Artefacts de compilation Rust
+target/
+**/*.rs.bk
 
-# Caches Python.
+# Artefacts Python
 __pycache__/
 *.py[cod]
+*.egg-info/
+.venv/
+venv/
 
-# Sorties de simulation.
+# Sorties de simulation
 *.csv
+!tests/*.csv
+
+# Editeurs et systeme
+.vscode/
+.idea/
+*.swp
+.DS_Store

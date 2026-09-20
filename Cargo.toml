@@ -1,9 +1,0 @@
-[package]
-name = "consensus_rs"
-version = "0.1.0"
-edition = "2024"
-license = "MIT"
-description = "Implémentation Rust de référence de ALG_CONSENSUS (CRDT semi-treillis + gossip), parité bit-à-bit avec la référence Python"
-repository = "https://github.com/dagornc/SwarmDrones"
-
-[dependencies]

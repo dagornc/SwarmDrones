@@ -1,0 +1,3 @@
+[submodule "algorithms/consensus"]
+	path = algorithms/consensus
+	url = https://github.com/dagornc/alg-consensus.git
