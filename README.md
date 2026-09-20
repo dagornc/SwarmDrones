@@ -58,9 +58,17 @@ coordinateur.
 - **v2** (branche `v2`) — mode additionnel activé par `--v2`. Reconnexion des
   agents isolés : T8 passe à **1000/1000** (+10 graines, 0 régression) et le
   trafic baisse de **32 %** sur ce test. Parité v1 préservée bit-à-bit.
+- **v3** (branche `v3`) — mode additionnel activé par `--v3`. Quiescence : un
+  agent cesse d'émettre quand son état est stable, avec réveil périodique.
+  **−66 % de messages** sur l'ensemble des tests, accord **1000/1000** partout.
+  Parité v1 préservée bit-à-bit.
+
+**Notation /20** (grille : correction 6, coût 5, latence 3, robustesse 3,
+ingénierie 3) : **v1 15,7** · **v2 16,3** · **v3 19,5**.
 
 → [Lire la documentation](https://github.com/dagornc/alg-consensus/blob/master/README.md)
 → [Section 20 — la v2](https://github.com/dagornc/alg-consensus/blob/v2/README.md#20-version-2--reconnexion-des-agents-isolés)
+→ [Section 21 — la v3](https://github.com/dagornc/alg-consensus/blob/v3/README.md#21-version-3--quiescence-loop-engineering)
 
 ---
 
