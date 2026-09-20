@@ -1,3 +1,6 @@
 [submodule "algorithms/consensus"]
 	path = algorithms/consensus
 	url = https://github.com/dagornc/alg-consensus.git
+[submodule "algorithms/task-allocation"]
+	path = algorithms/task-allocation
+	url = https://github.com/dagornc/alg-task-allocation.git

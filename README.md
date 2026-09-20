@@ -35,6 +35,7 @@ mêmes versions d'algorithmes.
 | Algorithme | Dépôt | Chemin | Version épinglée |
 |---|---|---|---|
 | `ALG_CONSENSUS` | [dagornc/alg-consensus](https://github.com/dagornc/alg-consensus) | `algorithms/consensus` | voir `git submodule status` |
+| `ALG_TASK_ALLOCATION` | [dagornc/alg-task-allocation](https://github.com/dagornc/alg-task-allocation) | `algorithms/task-allocation` | voir `git submodule status` |
 
 ### ALG_CONSENSUS
 
@@ -45,8 +46,8 @@ coordinateur.
 
 - Implémentation **Rust**, à **parité bit-à-bit** avec une référence Python
   embarquée (MT19937 compatible CPython).
-- 9 tests de harnais (T1…T9), 26 tests automatisés, 0 warning.
-- Documentation de référence complète : 20 chapitres couvrant le
+- 9 tests de harnais (T1…T9), 62 tests automatisés, 0 warning.
+- Documentation de référence complète : 22 chapitres couvrant le
   fonctionnement, les prérequis, l'installation, la configuration, les
   paramètres d'entrée et de sortie, les mesures et les limites connues.
 
@@ -62,13 +63,47 @@ coordinateur.
   agent cesse d'émettre quand son état est stable, avec réveil périodique.
   **−66 % de messages** sur l'ensemble des tests, accord **1000/1000** partout.
   Parité v1 préservée bit-à-bit.
+- **v4** (branche `v4`) — couche **opérationnelle** (loop engineering) : les 8
+  building blocks rendus exécutables — état de consensus complet, persistance,
+  reconfiguration dynamique, vérification indépendante (maker/checker),
+  supervision avec escalade, budgets durs. Parité v1 préservée bit-à-bit.
 
 **Notation /20** (grille : correction 6, coût 5, latence 3, robustesse 3,
-ingénierie 3) : **v1 15,7** · **v2 16,3** · **v3 19,5**.
+ingénierie 3) : **v1 15,7** · **v2 16,3** · **v3 19,5** · **v4 17,5**.
 
 → [Lire la documentation](https://github.com/dagornc/alg-consensus/blob/master/README.md)
 → [Section 20 — la v2](https://github.com/dagornc/alg-consensus/blob/v2/README.md#20-version-2--reconnexion-des-agents-isolés)
 → [Section 21 — la v3](https://github.com/dagornc/alg-consensus/blob/v3/README.md#21-version-3--quiescence-loop-engineering)
+→ [Section 22 — la v4](https://github.com/dagornc/alg-consensus/blob/v4/README.md#22-version-4--couche-opérationnelle-loop-engineering)
+
+### ALG_TASK_ALLOCATION
+
+Allocation de tâches par **essaim de drones** : CBBA événementiel (ED-CBBA)
+avec résilience aux partitions. Chaque agent construit un bundle de tâches,
+le diffuse, et résout les conflits par consensus ; la partition est détectée
+par quorum et le système se dégrade proprement.
+
+- Implémentation **Rust**, à **parité bit-à-bit** avec une référence Python
+  embarquée (MT19937 compatible CPython).
+- 30 agents, grille 6×5, 8 building blocks opérationnels.
+- Réduction du trafic de **95,2 %** sur T8 (1,96 M → 93 k messages).
+
+**Versions disponibles :**
+
+- **v1** (branche `master`) — CBBA standard, comportement historique.
+- **v2** (branche `v2`) — auto-amélioration de l'allocation par rejeu
+  (méthode Dream-RSI).
+- **v3** (branche `v3`) — boucle d'ingénierie (loop engineering) : résilience
+  aux partitions, condition d'arrêt vérifiable.
+- **v4** (branche `v4`) — couche **opérationnelle** (loop engineering) : les 8
+  building blocks rendus exécutables — état complet d'affectation,
+  persistance, reconfiguration dynamique, vérification indépendante
+  (maker/checker), supervision avec escalade, budgets durs.
+
+**Notation /20** : **v1 15,0** · **v2 16,5** · **v3 19,5** · **v4 17,5**.
+
+→ [Lire la documentation](https://github.com/dagornc/alg-task-allocation/blob/master/README.md)
+→ [Section 12 — la v4](https://github.com/dagornc/alg-task-allocation/blob/v4/README.md)
 
 ---
 
