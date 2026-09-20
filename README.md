@@ -45,12 +45,22 @@ coordinateur.
 
 - Implémentation **Rust**, à **parité bit-à-bit** avec une référence Python
   embarquée (MT19937 compatible CPython).
-- 9 tests de harnais (T1…T9), 18 tests automatisés, 0 warning.
-- Documentation de référence complète : 19 chapitres couvrant le
+- 9 tests de harnais (T1…T9), 26 tests automatisés, 0 warning.
+- Documentation de référence complète : 20 chapitres couvrant le
   fonctionnement, les prérequis, l'installation, la configuration, les
   paramètres d'entrée et de sortie, les mesures et les limites connues.
 
+**Versions disponibles :**
+
+- **v1** (branche `master`) — comportement historique. Sur T8, 990/1000 graines
+  convergent ; les 10 échecs sont des agents isolés par retrait (propriété de
+  la topologie, documentée en §15.1).
+- **v2** (branche `v2`) — mode additionnel activé par `--v2`. Reconnexion des
+  agents isolés : T8 passe à **1000/1000** (+10 graines, 0 régression) et le
+  trafic baisse de **32 %** sur ce test. Parité v1 préservée bit-à-bit.
+
 → [Lire la documentation](https://github.com/dagornc/alg-consensus/blob/master/README.md)
+→ [Section 20 — la v2](https://github.com/dagornc/alg-consensus/blob/v2/README.md#20-version-2--reconnexion-des-agents-isolés)
 
 ---
 
@@ -135,6 +145,7 @@ minimum :
 17. Dépannage
 18. Glossaire
 19. Licence et références
+20. Versions et évolutions (v2, v3…)
 
 Le modèle de référence est le
 [README de `alg-consensus`](https://github.com/dagornc/alg-consensus/blob/master/README.md).
