@@ -4,3 +4,6 @@
 [submodule "algorithms/task-allocation"]
 	path = algorithms/task-allocation
 	url = https://github.com/dagornc/alg-task-allocation.git
+[submodule "protocols/hzip"]
+	path = protocols/hzip
+	url = https://github.com/dagornc/alg-protocole.git

@@ -3,8 +3,9 @@
 Dépôt principal de la **solution A** : un essaim de drones autonomes qui doit
 maintenir une décision d'état partagée sans coordinateur central.
 
-Ce dépôt ne contient **pas** le code des algorithmes. Il les **agrège** : chaque
-algorithme vit dans son propre dépôt GitHub, rattaché ici en tant que
+Ce dépôt ne contient **pas** le code des algorithmes ni celui des protocoles. Il
+les **agrège** : chaque algorithme et chaque protocole vit dans son propre dépôt
+GitHub, rattaché ici en tant que
 [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
 
 ---
@@ -18,8 +19,9 @@ autre chose.
 
 L'architecture retenue sépare les deux responsabilités :
 
-- **`SwarmDrones`** — l'orchestrateur. Il déclare *quels* algorithmes composent
-  la solution, à *quelle version* ils sont épinglés, et comment ils s'articulent.
+- **`SwarmDrones`** — l'orchestrateur. Il déclare *quels* algorithmes et
+  protocoles composent la solution, à *quelle version* ils sont épinglés, et
+  comment ils s'articulent.
 - **`alg-<nom>`** — un dépôt par algorithme. Il contient le code, les tests, la
   documentation de référence et l'historique de ses propres versions.
 
@@ -27,6 +29,17 @@ Le submodule est le lien : `SwarmDrones` enregistre un **commit précis** de
 chaque algorithme, pas une branche flottante. La solution est donc
 reproductible — cloner `SwarmDrones` à une date donnée redonne exactement les
 mêmes versions d'algorithmes.
+
+### Algorithmes et protocoles
+
+Le dépôt distingue deux natures d'objets :
+
+- **`algorithms/`** — les algorithmes de décision (consensus, allocation de
+  tâches). Ce sont des **calculs** : ils transforment un état en une décision.
+- **`protocols/`** — les protocoles de communication. Ce sont des **contrats
+  d'échange** : ils fixent le format des messages, les fréquences, les règles
+  de rejet et les garanties de convergence. Un protocole n'est pas un
+  algorithme — il est spécifié de façon normative, puis implémenté.
 
 ---
 
@@ -107,6 +120,43 @@ par quorum et le système se dégrade proprement.
 
 ---
 
+## Protocoles
+
+| Protocole | Dépôt | Chemin | Version épinglée |
+|---|---|---|---|
+| `H-Zip` | [dagornc/alg-protocole](https://github.com/dagornc/alg-protocole) | `protocols/hzip` | voir `git submodule status` |
+
+### H-Zip v2.2 « Dream-Zip »
+
+Protocole de communication **event-driven** pour essaim hétérogène haute densité
+(UAV / USV / UUV, 200 nœuds). L'état par défaut est le **silence radio** : on ne
+transmet que pour corriger une déviation par rapport à un modèle prédictif
+partagé.
+
+Trois principes :
+
+- **Event-driven** — le silence est nominal, la transmission est l'exception.
+- **Hiérarchie par hubs** — les USV servent de routeurs de secteur ; les
+  terminaux ne s'adressent qu'à leur hub, ce qui élimine le broadcast storm à
+  200 nœuds.
+- **Séparation stricte des couches** — prédiction déterministe, réactive (APF),
+  stratégique (PSO), cognitive (LLM). **Le LLM est interdit dans les couches
+  temps réel.**
+
+Quatre trames : **R** (4 o, APF, 10–50 Hz) · **S** (8 o, PSO, 0,1–2 Hz) ·
+**D** (4 o, delta, événementielle) · **H** (8 o, heartbeat, 1/0,5/0,2 Hz).
+
+**Statut : spécification normative figée, implémentation non commencée.** Les
+**19 paramètres** du protocole, les **4 formats de trame** et la **borne de
+divergence** `e_max ≤ ½·a_max·T_hb²` sont figés. Les bornes physiques
+(`a_max`, `d_min`, capacité modem — décisions DE-05/06/07) restent **à
+mesurer**.
+
+→ [Lire la documentation](https://github.com/dagornc/alg-protocole/blob/main/README.md)
+→ [Spécification complète](https://github.com/dagornc/alg-protocole/blob/main/spec/H-Zip_v2.2_Specification_premium.docx)
+
+---
+
 ## Cloner la solution complète
 
 Le code des algorithmes n'est **pas** inclus dans un `git clone` ordinaire. Il
@@ -146,6 +196,30 @@ git commit -m "algorithms/<nom> : rattachement du submodule"
 
 ---
 
+## Ajouter un protocole
+
+Un protocole suit la même mécanique, mais son contenu est **normatif** : il
+décrit un contrat d'échange (formats de trame, fréquences, règles de rejet,
+garanties), pas un calcul.
+
+1. Créer le dépôt dédié sur GitHub, nommé `alg-<nom>`.
+2. Y publier la **spécification normative** (document de référence) et un
+   `README.md` de synthèse.
+3. Rattacher le dépôt ici :
+
+```bash
+git submodule add https://github.com/dagornc/alg-<nom>.git protocols/<nom>
+git commit -m "protocols/<nom> : rattachement du submodule"
+```
+
+4. Mettre à jour le tableau « Protocoles » de ce README.
+
+**Règle de cohérence.** Le modèle d'architecture LikeC4 **NE DOIT PAS**
+contredire la spécification du protocole. En cas d'écart, **la spécification
+fait foi**.
+
+---
+
 ## Mettre à jour un algorithme
 
 Le submodule épingle un commit. Pour avancer l'épingle après une évolution de
@@ -161,6 +235,8 @@ git commit -m "algorithms/<nom> : mise a jour de l'epingle"
 
 Le dépôt principal enregistre alors le nouveau commit. C'est cette étape qui
 rend l'évolution visible pour la solution.
+
+La même procédure s'applique aux protocoles, sous `protocols/<nom>`.
 
 ---
 
@@ -192,6 +268,30 @@ minimum :
 
 Le modèle de référence est le
 [README de `alg-consensus`](https://github.com/dagornc/alg-consensus/blob/master/README.md).
+
+### Standard de documentation d'un protocole
+
+Un protocole n'a ni installation ni paramètres d'entrée : son README est une
+**synthèse normative**, pas un manuel d'utilisation. Il doit couvrir :
+
+1. En bref — tableau de synthèse
+2. Le problème résolu
+3. Les principes du protocole
+4. Les formats de trame (tableau par trame, champ par champ)
+5. Les couches et leurs règles d'isolation
+6. Les paramètres figés (avec leur source de vérité)
+7. Les garanties formelles (bornes, preuves informelles)
+8. Les contraintes de portabilité
+9. Les critères de conformité
+10. Les métriques de vérification mesurables
+11. Les points ouverts
+12. Structure du dépôt
+13. La spécification normative (lien vers le document de référence)
+14. Bibliographie vérifiée
+15. Licence
+
+Le modèle de référence est le
+[README de `alg-protocole`](https://github.com/dagornc/alg-protocole/blob/main/README.md).
 
 ---
 
