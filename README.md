@@ -10,6 +10,12 @@ GitHub, rattaché ici en tant que
 
 ---
 
+## Swarm Command Center
+
+La [spécification détaillée premium V3.0](spec/Swarm_Command_Center_Specification_Premium_V3_0.md) définit l'interface de compréhension opérationnelle de l'essaim : supervision, mission, architecture LikeC4, décisions algorithmiques, historique, simulation et preuves scientifiques. La [version Word](spec/Swarm_Command_Center_Specification_Premium_V3_0.docx) est disponible pour revue et diffusion.
+
+Le document distingue les exigences produit des éléments déjà validés par le modèle LikeC4 et signale explicitement les décisions encore ouvertes.
+
 ## Pourquoi cette organisation
 
 Un algorithme d'essaim est un objet autonome : il a son propre cycle de vie, ses
