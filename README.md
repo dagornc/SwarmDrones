@@ -54,7 +54,7 @@ Le dépôt distingue deux natures d'objets :
 | Algorithme | Dépôt | Chemin | Spécification |
 |---|---|---|---|
 | `ALG_COLLISION_AVOIDANCE` | [dagornc/alg-collision-avoidance](https://github.com/dagornc/alg-collision-avoidance) | `algorithms/collision-avoidance` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_COLLISION_AVOIDANCE_v1.pdf) |
-| `ALG_CONSENSUS` | [dagornc/alg-consensus](https://github.com/dagornc/alg-consensus) | `algorithms/consensus` | [README](https://github.com/dagornc/alg-consensus/blob/master/README.md) |
+| `ALG_CONSENSUS` | [dagornc/alg-consensus](https://github.com/dagornc/alg-consensus) | `algorithms/consensus` | [PDF](https://likec4.breizh.ai/Specification_ALG_CONSENSUS_v5.pdf) |
 | `ALG_COOPERATIVE_LOCALIZATION` | [dagornc/alg-cooperative-localization](https://github.com/dagornc/alg-cooperative-localization) | `algorithms/cooperative-localization` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_COOPERATIVE_LOCALIZATION_v1.pdf) |
 | `ALG_ENERGY_AWARE` | [dagornc/alg-energy-aware](https://github.com/dagornc/alg-energy-aware) | `algorithms/energy-aware` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_ENERGY_AWARE_v1.pdf) |
 | `ALG_EVENT_TRIGGERED_COMM` | [dagornc/alg-event-triggered-comm](https://github.com/dagornc/alg-event-triggered-comm) | `algorithms/event-triggered-comm` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_EVENT_TRIGGERED_COMM_v1.pdf) |
@@ -67,7 +67,7 @@ Le dépôt distingue deux natures d'objets :
 | `ALG_PATH_PLANNING` | [dagornc/alg-path-planning](https://github.com/dagornc/alg-path-planning) | `algorithms/path-planning` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_PATH_PLANNING_v1.pdf) |
 | `ALG_PERCEPTION_FUSION` | [dagornc/alg-perception-fusion](https://github.com/dagornc/alg-perception-fusion) | `algorithms/perception-fusion` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_PERCEPTION_FUSION_v1.pdf) |
 | `ALG_SAFETY_RULES` | [dagornc/alg-safety-rules](https://github.com/dagornc/alg-safety-rules) | `algorithms/safety-rules` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_SAFETY_RULES_v1.pdf) |
-| `ALG_TASK_ALLOCATION` | [dagornc/alg-task-allocation](https://github.com/dagornc/alg-task-allocation) | `algorithms/task-allocation` | [README](https://github.com/dagornc/alg-task-allocation/blob/master/README.md) |
+| `ALG_TASK_ALLOCATION` | [dagornc/alg-task-allocation](https://github.com/dagornc/alg-task-allocation) | `algorithms/task-allocation` | [PDF](https://likec4.breizh.ai/Spec_ALG_TASK_ALLOCATION_V3.pdf) |
 
 > **Note sur les versions épinglées.** Chaque submodule épingle un **commit
 > précis**, pas une branche flottante. Pour `ALG_CONSENSUS` et
@@ -199,8 +199,8 @@ Le modèle d'architecture complet est maintenu dans le dépôt
 
 | Algorithme | Spécification PDF | Modèle SysML v2 |
 |---|---|---|
-| `ALG_CONSENSUS` | [README](https://github.com/dagornc/alg-consensus/blob/master/README.md) | [SysML](https://likec4.breizh.ai/sysml/ALG_CONSENSUS.sysml) |
-| `ALG_TASK_ALLOCATION` | [README](https://github.com/dagornc/alg-task-allocation/blob/master/README.md) | [SysML](https://likec4.breizh.ai/sysml/ALG_TASK_ALLOCATION.sysml) |
+| `ALG_CONSENSUS` | [PDF](https://likec4.breizh.ai/Specification_ALG_CONSENSUS_v5.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_CONSENSUS.sysml) |
+| `ALG_TASK_ALLOCATION` | [PDF](https://likec4.breizh.ai/Spec_ALG_TASK_ALLOCATION_V3.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_TASK_ALLOCATION.sysml) |
 | `ALG_COLLISION_AVOIDANCE` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_COLLISION_AVOIDANCE_v1.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_COLLISION_AVOIDANCE.sysml) |
 | `ALG_COOPERATIVE_LOCALIZATION` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_COOPERATIVE_LOCALIZATION_v1.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_COOPERATIVE_LOCALIZATION.sysml) |
 | `ALG_ENERGY_AWARE` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_ENERGY_AWARE_v1.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_ENERGY_AWARE.sysml) |
@@ -214,11 +214,6 @@ Le modèle d'architecture complet est maintenu dans le dépôt
 | `ALG_PATH_PLANNING` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_PATH_PLANNING_v1.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_PATH_PLANNING.sysml) |
 | `ALG_PERCEPTION_FUSION` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_PERCEPTION_FUSION_v1.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_PERCEPTION_FUSION.sysml) |
 | `ALG_SAFETY_RULES` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_SAFETY_RULES_v1.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_SAFETY_RULES.sysml) |
-
-> **Note.** `ALG_CONSENSUS` et `ALG_TASK_ALLOCATION` disposent de leurs
-> spécifications détaillées dans leur dépôt respectif (README multi-chapitres),
-> et non d'un PDF séparé. Les 13 autres algorithmes ont un PDF normatif publié
-> sur `likec4.breizh.ai`.
 
 ### Spécification système
 
