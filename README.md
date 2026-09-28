@@ -54,7 +54,7 @@ Le dépôt distingue deux natures d'objets :
 | Algorithme | Dépôt | Chemin | Spécification |
 |---|---|---|---|
 | `ALG_COLLISION_AVOIDANCE` | [dagornc/alg-collision-avoidance](https://github.com/dagornc/alg-collision-avoidance) | `algorithms/collision-avoidance` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_COLLISION_AVOIDANCE_v1.pdf) |
-| `ALG_CONSENSUS` | [dagornc/alg-consensus](https://github.com/dagornc/alg-consensus) | `algorithms/consensus` | [PDF](https://likec4.breizh.ai/Specification_ALG_CONSENSUS_v5.pdf) |
+| `ALG_CONSENSUS` | [dagornc/alg-consensus](https://github.com/dagornc/alg-consensus) | `algorithms/consensus` | [PDF](https://likec4.breizh.ai/Spec_ALG_CONSENSUS_v7.pdf) |
 | `ALG_COOPERATIVE_LOCALIZATION` | [dagornc/alg-cooperative-localization](https://github.com/dagornc/alg-cooperative-localization) | `algorithms/cooperative-localization` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_COOPERATIVE_LOCALIZATION_v1.pdf) |
 | `ALG_ENERGY_AWARE` | [dagornc/alg-energy-aware](https://github.com/dagornc/alg-energy-aware) | `algorithms/energy-aware` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_ENERGY_AWARE_v1.pdf) |
 | `ALG_EVENT_TRIGGERED_COMM` | [dagornc/alg-event-triggered-comm](https://github.com/dagornc/alg-event-triggered-comm) | `algorithms/event-triggered-comm` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_EVENT_TRIGGERED_COMM_v1.pdf) |
@@ -199,7 +199,7 @@ Le modèle d'architecture complet est maintenu dans le dépôt
 
 | Algorithme | Spécification PDF | Modèle SysML v2 |
 |---|---|---|
-| `ALG_CONSENSUS` | [PDF](https://likec4.breizh.ai/Specification_ALG_CONSENSUS_v5.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_CONSENSUS.sysml) |
+| `ALG_CONSENSUS` | [PDF](https://likec4.breizh.ai/Spec_ALG_CONSENSUS_v7.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_CONSENSUS.sysml) |
 | `ALG_TASK_ALLOCATION` | [PDF](https://likec4.breizh.ai/Spec_ALG_TASK_ALLOCATION_V3.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_TASK_ALLOCATION.sysml) |
 | `ALG_COLLISION_AVOIDANCE` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_COLLISION_AVOIDANCE_v1.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_COLLISION_AVOIDANCE.sysml) |
 | `ALG_COOPERATIVE_LOCALIZATION` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_COOPERATIVE_LOCALIZATION_v1.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_COOPERATIVE_LOCALIZATION.sysml) |
