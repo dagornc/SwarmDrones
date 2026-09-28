@@ -69,6 +69,14 @@ Le dépôt distingue deux natures d'objets :
 | `ALG_SAFETY_RULES` | [dagornc/alg-safety-rules](https://github.com/dagornc/alg-safety-rules) | `algorithms/safety-rules` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_SAFETY_RULES_v1.pdf) |
 | `ALG_TASK_ALLOCATION` | [dagornc/alg-task-allocation](https://github.com/dagornc/alg-task-allocation) | `algorithms/task-allocation` | [README](https://github.com/dagornc/alg-task-allocation/blob/master/README.md) |
 
+> **Note sur les versions épinglées.** Chaque submodule épingle un **commit
+> précis**, pas une branche flottante. Pour `ALG_CONSENSUS` et
+> `ALG_TASK_ALLOCATION`, l'épingle pointe la branche **`v4`** (couche
+> opérationnelle, loop engineering) et non `master` : dans ces deux dépôts,
+> `master` porte la **v1 historique** et les versions ultérieures vivent sur
+> des branches dédiées (`v2`, `v3`, `v4`, …). Épingler `master` reviendrait à
+> rétrograder la solution. Vérifier l'épingle avec `git submodule status`.
+
 ### ALG_CONSENSUS
 
 Consensus d'état d'essaim par **CRDT semi-treillis** et **gossip** sur une
