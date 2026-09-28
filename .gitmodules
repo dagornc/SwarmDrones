@@ -7,3 +7,42 @@
 [submodule "protocols/hzip"]
 	path = protocols/hzip
 	url = https://github.com/dagornc/alg-protocole.git
+[submodule "algorithms/collision-avoidance"]
+	path = algorithms/collision-avoidance
+	url = https://github.com/dagornc/alg-collision-avoidance.git
+[submodule "algorithms/cooperative-localization"]
+	path = algorithms/cooperative-localization
+	url = https://github.com/dagornc/alg-cooperative-localization.git
+[submodule "algorithms/energy-aware"]
+	path = algorithms/energy-aware
+	url = https://github.com/dagornc/alg-energy-aware.git
+[submodule "algorithms/event-triggered-comm"]
+	path = algorithms/event-triggered-comm
+	url = https://github.com/dagornc/alg-event-triggered-comm.git
+[submodule "algorithms/fault-tolerant-control-alloc"]
+	path = algorithms/fault-tolerant-control-alloc
+	url = https://github.com/dagornc/alg-fault-tolerant-control-alloc.git
+[submodule "algorithms/formation-control"]
+	path = algorithms/formation-control
+	url = https://github.com/dagornc/alg-formation-control.git
+[submodule "algorithms/health-monitoring"]
+	path = algorithms/health-monitoring
+	url = https://github.com/dagornc/alg-health-monitoring.git
+[submodule "algorithms/jamming-resilient-mode"]
+	path = algorithms/jamming-resilient-mode
+	url = https://github.com/dagornc/alg-jamming-resilient-mode.git
+[submodule "algorithms/leader-election"]
+	path = algorithms/leader-election
+	url = https://github.com/dagornc/alg-leader-election.git
+[submodule "algorithms/nav-gnss-degrade"]
+	path = algorithms/nav-gnss-degrade
+	url = https://github.com/dagornc/alg-nav-gnss-degrade.git
+[submodule "algorithms/path-planning"]
+	path = algorithms/path-planning
+	url = https://github.com/dagornc/alg-path-planning.git
+[submodule "algorithms/perception-fusion"]
+	path = algorithms/perception-fusion
+	url = https://github.com/dagornc/alg-perception-fusion.git
+[submodule "algorithms/safety-rules"]
+	path = algorithms/safety-rules
+	url = https://github.com/dagornc/alg-safety-rules.git

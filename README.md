@@ -51,10 +51,23 @@ Le dépôt distingue deux natures d'objets :
 
 ## Algorithmes
 
-| Algorithme | Dépôt | Chemin | Version épinglée |
+| Algorithme | Dépôt | Chemin | Spécification |
 |---|---|---|---|
-| `ALG_CONSENSUS` | [dagornc/alg-consensus](https://github.com/dagornc/alg-consensus) | `algorithms/consensus` | voir `git submodule status` |
-| `ALG_TASK_ALLOCATION` | [dagornc/alg-task-allocation](https://github.com/dagornc/alg-task-allocation) | `algorithms/task-allocation` | voir `git submodule status` |
+| `ALG_COLLISION_AVOIDANCE` | [dagornc/alg-collision-avoidance](https://github.com/dagornc/alg-collision-avoidance) | `algorithms/collision-avoidance` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_COLLISION_AVOIDANCE_v1.pdf) |
+| `ALG_CONSENSUS` | [dagornc/alg-consensus](https://github.com/dagornc/alg-consensus) | `algorithms/consensus` | [README](https://github.com/dagornc/alg-consensus/blob/master/README.md) |
+| `ALG_COOPERATIVE_LOCALIZATION` | [dagornc/alg-cooperative-localization](https://github.com/dagornc/alg-cooperative-localization) | `algorithms/cooperative-localization` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_COOPERATIVE_LOCALIZATION_v1.pdf) |
+| `ALG_ENERGY_AWARE` | [dagornc/alg-energy-aware](https://github.com/dagornc/alg-energy-aware) | `algorithms/energy-aware` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_ENERGY_AWARE_v1.pdf) |
+| `ALG_EVENT_TRIGGERED_COMM` | [dagornc/alg-event-triggered-comm](https://github.com/dagornc/alg-event-triggered-comm) | `algorithms/event-triggered-comm` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_EVENT_TRIGGERED_COMM_v1.pdf) |
+| `ALG_FAULT_TOLERANT_CONTROL_ALLOC` | [dagornc/alg-fault-tolerant-control-alloc](https://github.com/dagornc/alg-fault-tolerant-control-alloc) | `algorithms/fault-tolerant-control-alloc` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_FAULT_TOLERANT_CONTROL_ALLOC_v1.pdf) |
+| `ALG_FORMATION_CONTROL` | [dagornc/alg-formation-control](https://github.com/dagornc/alg-formation-control) | `algorithms/formation-control` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_FORMATION_CONTROL_v1.pdf) |
+| `ALG_HEALTH_MONITORING` | [dagornc/alg-health-monitoring](https://github.com/dagornc/alg-health-monitoring) | `algorithms/health-monitoring` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_HEALTH_MONITORING_v1.pdf) |
+| `ALG_JAMMING_RESILIENT_MODE` | [dagornc/alg-jamming-resilient-mode](https://github.com/dagornc/alg-jamming-resilient-mode) | `algorithms/jamming-resilient-mode` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_JAMMING_RESILIENT_MODE_v1.pdf) |
+| `ALG_LEADER_ELECTION` | [dagornc/alg-leader-election](https://github.com/dagornc/alg-leader-election) | `algorithms/leader-election` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_LEADER_ELECTION_v2.pdf) |
+| `ALG_NAV_GNSS_DEGRADE` | [dagornc/alg-nav-gnss-degrade](https://github.com/dagornc/alg-nav-gnss-degrade) | `algorithms/nav-gnss-degrade` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_NAV_GNSS_DEGRADE_v2.pdf) |
+| `ALG_PATH_PLANNING` | [dagornc/alg-path-planning](https://github.com/dagornc/alg-path-planning) | `algorithms/path-planning` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_PATH_PLANNING_v1.pdf) |
+| `ALG_PERCEPTION_FUSION` | [dagornc/alg-perception-fusion](https://github.com/dagornc/alg-perception-fusion) | `algorithms/perception-fusion` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_PERCEPTION_FUSION_v1.pdf) |
+| `ALG_SAFETY_RULES` | [dagornc/alg-safety-rules](https://github.com/dagornc/alg-safety-rules) | `algorithms/safety-rules` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_SAFETY_RULES_v1.pdf) |
+| `ALG_TASK_ALLOCATION` | [dagornc/alg-task-allocation](https://github.com/dagornc/alg-task-allocation) | `algorithms/task-allocation` | [README](https://github.com/dagornc/alg-task-allocation/blob/master/README.md) |
 
 ### ALG_CONSENSUS
 
@@ -160,6 +173,59 @@ mesurer**.
 
 → [Lire la documentation](https://github.com/dagornc/alg-protocole/blob/main/README.md)
 → [Spécification complète](https://github.com/dagornc/alg-protocole/blob/main/spec/H-Zip_v2.2_Specification_premium.docx)
+
+---
+
+## Spécifications
+
+Chaque algorithme dispose d'une **spécification normative** (PDF) et d'un
+**modèle SysML v2** (`.sysml`). Ces artefacts sont hébergés publiquement sur
+[likec4.breizh.ai](https://likec4.breizh.ai) et rattachés aux cartes du modèle
+d'architecture LikeC4.
+
+Le modèle d'architecture complet est maintenu dans le dépôt
+`dagornc/swarmdrones-likec4` et publié sur
+[likec4.breizh.ai](https://likec4.breizh.ai).
+
+### Spécifications par algorithme
+
+| Algorithme | Spécification PDF | Modèle SysML v2 |
+|---|---|---|
+| `ALG_CONSENSUS` | [README](https://github.com/dagornc/alg-consensus/blob/master/README.md) | [SysML](https://likec4.breizh.ai/sysml/ALG_CONSENSUS.sysml) |
+| `ALG_TASK_ALLOCATION` | [README](https://github.com/dagornc/alg-task-allocation/blob/master/README.md) | [SysML](https://likec4.breizh.ai/sysml/ALG_TASK_ALLOCATION.sysml) |
+| `ALG_COLLISION_AVOIDANCE` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_COLLISION_AVOIDANCE_v1.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_COLLISION_AVOIDANCE.sysml) |
+| `ALG_COOPERATIVE_LOCALIZATION` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_COOPERATIVE_LOCALIZATION_v1.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_COOPERATIVE_LOCALIZATION.sysml) |
+| `ALG_ENERGY_AWARE` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_ENERGY_AWARE_v1.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_ENERGY_AWARE.sysml) |
+| `ALG_EVENT_TRIGGERED_COMM` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_EVENT_TRIGGERED_COMM_v1.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_EVENT_TRIGGERED_COMM.sysml) |
+| `ALG_FAULT_TOLERANT_CONTROL_ALLOC` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_FAULT_TOLERANT_CONTROL_ALLOC_v1.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_FAULT_TOLERANT_CONTROL_ALLOC.sysml) |
+| `ALG_FORMATION_CONTROL` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_FORMATION_CONTROL_v1.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_FORMATION_CONTROL.sysml) |
+| `ALG_HEALTH_MONITORING` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_HEALTH_MONITORING_v1.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_HEALTH_MONITORING.sysml) |
+| `ALG_JAMMING_RESILIENT_MODE` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_JAMMING_RESILIENT_MODE_v1.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_JAMMING_RESILIENT_MODE.sysml) |
+| `ALG_LEADER_ELECTION` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_LEADER_ELECTION_v2.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_LEADER_ELECTION.sysml) |
+| `ALG_NAV_GNSS_DEGRADE` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_NAV_GNSS_DEGRADE_v2.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_NAV_GNSS_DEGRADE.sysml) |
+| `ALG_PATH_PLANNING` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_PATH_PLANNING_v1.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_PATH_PLANNING.sysml) |
+| `ALG_PERCEPTION_FUSION` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_PERCEPTION_FUSION_v1.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_PERCEPTION_FUSION.sysml) |
+| `ALG_SAFETY_RULES` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_SAFETY_RULES_v1.pdf) | [SysML](https://likec4.breizh.ai/sysml/ALG_SAFETY_RULES.sysml) |
+
+> **Note.** `ALG_CONSENSUS` et `ALG_TASK_ALLOCATION` disposent de leurs
+> spécifications détaillées dans leur dépôt respectif (README multi-chapitres),
+> et non d'un PDF séparé. Les 13 autres algorithmes ont un PDF normatif publié
+> sur `likec4.breizh.ai`.
+
+### Spécification système
+
+| Document | Lien |
+|---|---|
+| Spécification système essaim de drones (v2) | [PDF](https://likec4.breizh.ai/specification/Specification_Systeme_Essaim_Drones_v2.pdf) |
+| H-Zip v2.2 « Dream-Zip » — spécification premium | [DOCX](https://likec4.breizh.ai/H-Zip_v2.2_Specification_premium.docx) |
+
+### Traçabilité
+
+Le modèle LikeC4 relie chaque algorithme à son code source, sa spécification,
+son modèle SysML et ses **fondations scientifiques** (articles de référence
+vérifiés par DOI). Les cartes du modèle sont la source de vérité pour les
+relations `implements`, `documentedBy` et `evidences`.
+
 
 ---
 
