@@ -51,6 +51,10 @@ Le dépôt distingue deux natures d'objets :
 
 ## Algorithmes
 
+**15 algorithmes canoniques** — le modèle LikeC4 (`algorithms.c4`) en déclare
+exactement 15, et ce tableau en liste 15. Toute divergence de comptage est un
+signal d'alerte, pas une variante.
+
 | Algorithme | Dépôt | Chemin | Spécification |
 |---|---|---|---|
 | `ALG_COLLISION_AVOIDANCE` | [dagornc/alg-collision-avoidance](https://github.com/dagornc/alg-collision-avoidance) | `algorithms/collision-avoidance` | [PDF](https://likec4.breizh.ai/specification/Spec_ALG_COLLISION_AVOIDANCE_v1.pdf) |
